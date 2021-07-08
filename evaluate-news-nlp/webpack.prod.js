@@ -13,6 +13,11 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                //NOTE WE are intentionally expressing the test case without quotation marks as advised in Lesson 3 Concept 6 of course
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
     },
