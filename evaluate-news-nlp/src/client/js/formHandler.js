@@ -48,6 +48,7 @@ sendData.addEventListener('click', handleSubmit);
     //Call the API function which makes the POST Request
         const apiData = await makeAPICall('http://localhost:8000/callAPI', formText)
     //Once apiData function returns a response, convert the response to json
+    //Equivalent to: .then( function (apiData) { apiData.json() })
             .then(apiData => apiData.json())
     //Finally call the UI function to display the results in the browser
             .then(function(response) {
@@ -69,7 +70,7 @@ sendData.addEventListener('click', handleSubmit);
             headers: {
                 'Content-Type': 'text/plain',
             },       
-            body: formText,
+            body: userInput,
         })
     
         return response

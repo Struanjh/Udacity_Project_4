@@ -22,11 +22,11 @@ dotenv.config();
 const app = express();
 
 //Configure the app
-//Explaining how we want the data to be dealt with
+//Explaining how we want the data to be dealt with  
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
-//This directs the app to the folder we want to use to run the client-side code
+//This directs the server to the folder we want to use to run the client-side code
 app.use(express.static('dist'))
 
 //API Documentation
@@ -35,7 +35,7 @@ app.use(express.static('dist'))
 //DYNAMICALLY BUILD THE URL
 const urlRoot = 'https://api.meaningcloud.com/sentiment-2.1';
 const urlKey = `?key=${key}`;
-const urlModel = '&model=general';
+const urlModel = '&model=general'; 
 const urlLanguage = '&lang=en';
 const urlUserInput = '&url='
 
