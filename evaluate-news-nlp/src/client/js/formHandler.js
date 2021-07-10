@@ -69,7 +69,7 @@ sendData.addEventListener('click', handleSubmit);
             headers: {
                 'Content-Type': 'text/plain',
             },       
-            body: userInput,
+            body: formText,
         })
     
         return response

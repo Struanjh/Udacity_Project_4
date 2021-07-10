@@ -3,11 +3,13 @@
 //Used to import API Key from .env file
 const dotenv = require('dotenv');
 //Note - may need to install this in terminal
+//Cross-origin-allowance - required when making requests across different domains
 const cors = require('cors');
 const path = require('path')
+//Express is needed to run the server and set up route handlers
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
-//Need to investigate and understand what this is...
+//An extra middle-ware layer used to handle POST Requests (by parsing the returned data)
 const bodyParser = require('body-parser');
 //Need to investigate and understand what this is...
 const fetch = require('node-fetch');
@@ -20,9 +22,11 @@ dotenv.config();
 const app = express();
 
 //Configure the app
+//Explaining how we want the data to be dealt with
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
+//This directs the app to the folder we want to use to run the client-side code
 app.use(express.static('dist'))
 
 //API Documentation
