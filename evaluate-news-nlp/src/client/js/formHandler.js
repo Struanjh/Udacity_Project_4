@@ -1,7 +1,7 @@
 //Basic Workflow:
 //1) User submits the URL & (after passing validation) we POST the data to the Server. (USING HTTP POST REQUEST with Fetch API)
 //2) Server POST Route handles the request & makes an HTTP GET Request with Fetch API to MeaningCloud API, and stores response in variable returnedData (all in Index.js)
-//3) THe apiData variable holds the response from index.js (returnedData), the response is converted to JSON, & call the updateUI function to transfer results to the browser.
+//3) THe apiData variable holds the response from index.js (returnedData), the response is converted to JSON, & then we call the updateUI function to transfer results to the browser.
 
 //Import required functions
 import { checkForName } from './nameChecker';
@@ -72,7 +72,7 @@ sendData.addEventListener('click', handleSubmit);
             },       
             body: userInput,
         })
-    
+    //Once the response is received from index.js, return the response which will be stored in variable apiData & then converted to json
         return response
     }
 
