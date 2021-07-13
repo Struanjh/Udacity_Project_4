@@ -12,6 +12,10 @@ const mockAPIResponse = require('./mockAPI.js')
 //An extra middle-ware layer used to handle POST Requests (by parsing the returned data)
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 dotenv.config();
 

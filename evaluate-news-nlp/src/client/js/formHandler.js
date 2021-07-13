@@ -11,8 +11,8 @@ import { checkForName } from './nameChecker';
 const fetch = require('node-fetch');
 
 //Create Event Listener on the Form Submit Button
-const sendData = document.getElementById('formSubmit');
-sendData.addEventListener('click', handleSubmit);
+//const sendData = document.getElementById('formSubmit');
+//sendData.addEventListener('click', handleSubmit);
 
 
 //This function will be called when the form is submitted by the user
@@ -40,7 +40,11 @@ sendData.addEventListener('click', handleSubmit);
     const formText = document.getElementById('name').value
  
     // Perform form validation using the checkForName function (Located in formHandler.js)
+<<<<<<< Updated upstream
     //DELETEDcheckForName(formText);
+=======
+    //checkForName(formText);
+>>>>>>> Stashed changes
 
     //If the function returns true - the URL was valid - so make error message blank
     if (checkforName(formText)) {
