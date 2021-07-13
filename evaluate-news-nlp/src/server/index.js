@@ -11,12 +11,12 @@ const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 //An extra middle-ware layer used to handle POST Requests (by parsing the returned data)
 const bodyParser = require('body-parser');
-//Need to investigate and understand what this is...
 const fetch = require('node-fetch');
-//Get API Key from .env file
-const key = process.env.API_KEY;
 
 dotenv.config();
+
+//Get API Key from .env file
+const key = process.env.API_KEY;
 
 //Create an instance of our app
 const app = express();
@@ -74,7 +74,7 @@ async function callAPI(req, res){
 //Log out the URL the user requested for convenience and debugging
 console.log(`User has requested the following URL: ${req.body}`);
 //Dynamically build the URL
-const url = urlRoot + urlKey + urlLanguage + urlModel + urlUserInput + req.body;
+const url = urlRoot + urlKey + urlLanguage + urlModel + urlUserInput + req.body.userInput;
 //Log out the full URL used to make the Fetch request for convenience and debugging
 console.log(url);
 

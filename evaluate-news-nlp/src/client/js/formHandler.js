@@ -21,11 +21,11 @@ sendData.addEventListener('click', handleSubmit);
     event.preventDefault()
 
     //Declare variables which will hold results from API Fetch
-    const subjectivity =  document.getElementById('subjectivity');
-    const agreement =  document.getElementById('agreement');
-    const irony =  document.getElementById('irony');
-    const confidence =  document.getElementById('confidence');
-    const errorMessage = document.getElementById('error message');
+    let subjectivity =  document.getElementById('subjectivity');
+    let agreement =  document.getElementById('agreement');
+    let irony =  document.getElementById('irony');
+    let confidence =  document.getElementById('confidence');
+    let errorMessage = document.getElementById('error message');
 
     //Clear Previous Form Results & Error Message
     subjectivity = "";
@@ -40,10 +40,10 @@ sendData.addEventListener('click', handleSubmit);
     const formText = document.getElementById('name').value
  
     // Perform form validation using the checkForName function (Located in formHandler.js)
-    checkForName(formText);
+    //DELETEDcheckForName(formText);
 
     //If the function returns true - the URL was valid - so make error message blank
-    if (checkforName()) {
+    if (checkforName(formText)) {
         errorMessage = "";
     //Call the API function which makes the POST Request
         const apiData = await makeAPICall('http://localhost:8000/callAPI', formText)
@@ -60,6 +60,7 @@ sendData.addEventListener('click', handleSubmit);
     }
 }
 
+
     //Use this asynchronous function to make the POST Request
     export async function makeAPICall(url, userInput) {
 
@@ -68,9 +69,9 @@ sendData.addEventListener('click', handleSubmit);
             method: 'POST',
             credentials: 'same-origin',
             headers: {
-                'Content-Type': 'text/plain',
+                'Content-Type': 'application/json',
             },       
-            body: userInput,
+            body: JSON.stringify({userInput}),
         })
     //Once the response is received from index.js, return the response which will be stored in variable apiData & then converted to json
         return response
