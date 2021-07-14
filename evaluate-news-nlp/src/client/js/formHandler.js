@@ -40,11 +40,6 @@ const fetch = require('node-fetch');
     const formText = document.getElementById('name').value
  
     // Perform form validation using the checkForName function (Located in formHandler.js)
-<<<<<<< Updated upstream
-    //DELETEDcheckForName(formText);
-=======
-    //checkForName(formText);
->>>>>>> Stashed changes
 
     //If the function returns true - the URL was valid - so make error message blank
     if (checkforName(formText)) {
