@@ -2,6 +2,7 @@
 ////Requiring NPM Packages//
 //Used to import API Key from .env file
 const dotenv = require('dotenv');
+dotenv.config();
 //Note - may need to install this in terminal
 //Cross-origin-allowance - required when making requests across different domains
 const cors = require('cors');
@@ -13,7 +14,7 @@ const mockAPIResponse = require('./mockAPI.js')
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 
-dotenv.config();
+
 
 //Get API Key from .env file
 const key = process.env.API_KEY;
