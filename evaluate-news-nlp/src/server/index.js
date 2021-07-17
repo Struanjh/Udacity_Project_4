@@ -74,7 +74,8 @@ async function callAPI(req, res){
 //Log out the URL the user requested for convenience and debugging
 console.log(`User has requested the following URL: ${req.body}`);
 //Dynamically build the URL
-const url = urlRoot + urlKey + urlLanguage + urlModel + urlUserInput + req.body.userInput;
+//const url = urlRoot + urlKey + urlLanguage + urlModel + urlUserInput + req.body.userInput;
+const url = urlRoot + urlKey + urlUserInput + req.body.userInput + urlLanguage; 
 //Log out the full URL used to make the Fetch request for convenience and debugging
 console.log(url);
 
