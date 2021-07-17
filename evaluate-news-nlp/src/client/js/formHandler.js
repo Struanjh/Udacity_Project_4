@@ -42,7 +42,7 @@ const fetch = require('node-fetch');
     // Perform form validation using the checkForName function (Located in formHandler.js)
 
     //If the function returns true - the URL was valid - so make error message blank
-    if (Client.checkforName(formText)) {
+    if (Client.checkForName(formText)) {
         errorMessage = "";
     //Call the API function which makes the POST Request
         const apiData = await makeAPICall('http://localhost:8000/callAPI', formText)
