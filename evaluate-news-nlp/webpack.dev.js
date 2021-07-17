@@ -42,5 +42,9 @@ module.exports = {
         port: 3001,
         inline: true,
         hot: true
+    },
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
     }
 }
