@@ -88,7 +88,7 @@ const response = await fetch(url);
 try {
     const returnedData = await response.json();
     //Test if the fetch request was successful
-    if(returnedData.statusCode == 0) {
+    if(returnedData.status.code == 0) {
     //If Successful store the message in the variable, and send the data back as a response
         returnedData.message = "Data successfully retrieved";
         res.send(returnedData);
